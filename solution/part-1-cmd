@@ -1,15 +1,15 @@
 
 Manually ran docker container with given given image.
 
-docker pull infracloudio/csvserver:latest
-docker images
-docker run -it infracloudio/csvserver bash
+$docker pull infracloudio/csvserver:latest
+$docker images
+$docker run -it infracloudio/csvserver bash
 
 debug application 
-./csvserver 
+$./csvserver 
 2021/10/05 04:04:25 error while reading the file "/csvserver/inputdata": open /csvserver/inputdata: no such file or directory
 
-./gencsv.sh  #genrates csv as asked.
+$./gencsv.sh  #genrates csv as asked.
 
 gave inputfile invoked csvserver again made up and running 
 
@@ -17,16 +17,15 @@ curl host got output in html
 
 check any application in bg 
 
-ps ef 
-netstat -tlnp
+inside the running container
+$ps ef 
+$netstat -tlnp
 
-docker inspect 
-#for more infomation.
+$docker inspect #for more infomation.
 
 $docker run -e CSVSERVER_BORDER=Orange -dp 9393:9300 -v /root/inputFile:/csvserver/inputdata 8cb989ef80b5
 $docker logs a29acc6780a0c36ee8b8f2b99c02280992d83f59c4c225f42a8ca881d0a0f594
 
 log: 2021/10/05 04:24:26 error while reading the file "/csvserver/inputdata": read /csvserver/inputdata: is a directory
 
-container stopped as docker failed assigned port and another reason is  " -v /root/inputFile:/csvserver/inputdata" as file does not exit mount creates directory of that name. 
 
